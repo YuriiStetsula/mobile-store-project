@@ -1,0 +1,36 @@
+<div class="catalog">
+  <div class="container">
+    <div class="row">
+      <div class="filtered" ng-show="$ctrl.filteredBy">{{$ctrl.filteredBy}} <span ng-click="$ctrl.sortBy('')" class="btn btn-danger btn-xs">x</span></div>
+      <div class="col-md-9 flex">
+
+        <div ng-repeat="item_inn in $ctrl.items | limitTo:$ctrl.limit | orderBy:$ctrl.orderValue | filter:search" class="catalog__element col-md-4">
+
+          <app-catalog-item component-item="item_inn" on-add="$ctrl.addItemToCart(catalogItem)"
+                            to-state="$ctrl.toDetails(id)"></app-catalog-item>
+        </div>
+      </div>
+      <div class="col-md-3 sorting">
+          <div class="sort-by-price">
+          <p>Sort by price <br>
+            <span class="pointer" ng-click="$ctrl.sortBy('price')">min to max</span> |
+            <span class="pointer" ng-click="$ctrl.sortBy('-price')">max to min</span>
+          </p>
+            <input type="text" ng-model="search" ng-keydown="$ctrl.showAll()">
+          </div>
+      </div>
+     </div>
+    <div class="row">
+      <div class="col-md-offset-2 col-md-8">
+        <div class="swow-more"><button class="btn btn-info" ng-click="$ctrl.showMore()">Show more</button></div>
+
+      </div>
+    </div>
+
+    </div>
+
+  </div>
+
+
+
+

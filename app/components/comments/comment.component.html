@@ -1,0 +1,33 @@
+<div class="phone-review row">
+  <h3>Reviews</h3>
+  <div class="phone-review__output col-md-12" ng-repeat="review in $ctrl.review">
+    <div class="output_author"> {{review.author}} </div>
+
+    <div class="output_text">{{review.text}}</div>
+    <div class="output_date">{{review.created_on | date: "dd/MM/yyyy @ h:mma"}}</div>
+  </div>
+
+  <div class="phone-review__input col-md-12">
+
+    <div class="input-author__wrap">
+      <p>Add review</p>
+      <p>Author</p>
+          <input type="text" class="phone-review__input-author" ng-model="$ctrl.newUserName" >
+    </div>
+    <div class="input-message__wrap">
+      <p>Message</p>
+         <input class="phone-review__input-message" type="text"
+                   ng-model="$ctrl.newUserMessage">
+    </div>
+    <div class="input__input-btn">
+
+      <button class="btn" ng-click="$ctrl.addComment()">Add review</button>
+    </div>
+
+
+  </div>
+
+
+</div>
+
+

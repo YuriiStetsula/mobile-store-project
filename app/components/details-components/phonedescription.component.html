@@ -1,0 +1,55 @@
+<div class="telephone_name"> Name:  {{$ctrl.phoneDescription.name}}</div>
+
+<div class="main-description">
+    {{$ctrl.phoneDescription.description[0]}}
+  </div>
+
+  <div class="telephone_features"> Additional Features:  {{$ctrl.phoneDescription.additionalFeatures}}</div>
+  <div class="telephone_android">
+    <ul>
+      <li>Android:
+        <ul>
+          <li>UI:  {{$ctrl.phoneDescription.android.ui}} </li>
+          <li>OS : {{$ctrl.phoneDescription.android.os}} </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="telephone_storage">
+    <ul>
+      <li>Storage:
+        <ul>
+          <li>Flash: {{$ctrl.phoneDescription.storage.flash}}</li>
+          <li>Ram : {{$ctrl.phoneDescription.storage.ram}} </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="telephone_display">
+    <ul>
+      <li>display:
+        <ul>
+          <li>screen resolution: {{$ctrl.phoneDescription.display.screenResolution}}</li>
+          <li>screen size : {{$ctrl.phoneDescription.display.screenSize}} </li>
+          <li >touchScreen : {{ $ctrl.phoneDescription.display.touchScreen}} </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+
+
+  <div class="telephone_price">
+    Price: {{$ctrl.phoneDescription.price}}
+  </div>
+
+<div class="catalog-item__controlls">
+  <button class="btn btn-add btn-success" ng-click="$ctrl.add()">
+    Add to cart
+  </button>
+
+</div>
+
+

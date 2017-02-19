@@ -1,0 +1,67 @@
+<div class="container content">
+  <div class="row">
+
+    <div class="col-md-5">
+      <table class="table" >
+        <caption>Your order</caption>
+        <tr>
+          <td>Item</td>
+          <td>Qnt</td>
+          <td>Price</td>
+        </tr>
+        <tr ng-repeat = "item in $ctrl.itemsForCheckout">
+          <td>{{item.name}}</td>
+          <td>{{item.num}}</td>
+          <td>{{item.price | currency}}</td>
+        </tr>
+        <tr>
+          <td class="align-right">
+            Total price:{{$ctrl.totalForCheckout | currency}}
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-7">
+
+      <form action="" class="order-form" name="order" novalidate  >
+
+        <div class="reg-input">
+          <label for="userFirstName">First  name</label> <input type="text" id="userFirstName"
+                                                                ng-model="$ctrl.user.firstName" required>
+        </div>
+
+        <div class="reg-input">
+          <label for="userLastName">Last  name</label> <input type="text" id="userLastName"
+                                                              ng-model="$ctrl.user.lastName" required>
+        </div>
+
+        <div class="reg-input">
+         <label for="userEmail">Email</label>
+         <input type="email" name="userEmail" id="userEmail" ng-model="$ctrl.user.email" required>
+         <div class="error-box" ng-show="order.userEmail.$invalid && order.userEmail.$dirty ">
+             {{$ctrl.getError(order.userEmail.$error)}}
+           <div class="arrow-down"></div>
+         </div>
+       </div>
+
+        <div class="reg-input">
+          <label for="userPhone">Phone</label> <input type="phone" id="userPhone"
+                                                      ng-model="$ctrl.user.phone"   required>
+        </div>
+
+
+        <div class="buttons">
+          <input type="button" value="Make order" class="btn btn-success"
+                 ng-disabled="order.$invalid"
+                 ng-click="$ctrl.createNewOrder()">
+          <a href="/cart"  class="btn">Back to cart</a></div>
+      </form>
+
+      <div class="order-complete alert alert-success" ng-if="$ctrl.success">
+        <p>Thank you {{$ctrl.orderObject.userFirstName}} {{$ctrl.orderObject.userLastName}}, everething is ok :) Our manager will contact with You in couple hours</p>
+      </div>
+
+    </div>
+
+  </div>
+</div>

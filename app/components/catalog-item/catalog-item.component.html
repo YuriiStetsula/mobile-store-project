@@ -1,0 +1,24 @@
+
+
+
+<div class="catalog-item" ng-click="$ctrl.goToState($event)">
+    <div class="catalog-item__image">
+        <img ng-src="http://localhost:4001/api/v1/{{$ctrl.componentItem.imgUrl}}" class="img-responsive" alt="">
+    </div>
+    <div class="catalog-item__small-description">
+        <div class="catalog-item__name">
+            {{$ctrl.componentItem.name}}
+        </div>
+        <div class="catalog-item__description-text">
+            {{$ctrl.componentItem.description}}
+        </div>
+        <div class="catalog-item__price">
+            {{$ctrl.componentItem.price | currency}}
+        </div>
+    </div>
+
+        <button class="btn btn-add btn-success my_button" ng-click="$ctrl.add()">
+          <spnan class="glyphicon glyphicon-shopping-cart"></spnan> Add to cart
+        </button>
+
+</div>

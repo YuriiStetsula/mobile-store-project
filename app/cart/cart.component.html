@@ -1,0 +1,34 @@
+
+
+<div class="container content">
+  <div class="row">
+    <div class="col-md-8">
+      <h2>Cart</h2>
+      <table class="table ">
+        <tr>
+          <td></td>
+          <td>Item</td>
+          <td>Price</td>
+          <td>Qnt</td>
+          <td></td>
+        </tr>
+      <tr ng-repeat="item in $ctrl.purchases track by $index">
+        <td> <img ng-src="http://localhost:4001/api/v1/{{item.imgUrl || item.images[0]}}" class="img-responsive img-thumbnail" alt="" width="200"></td>
+        <td>{{item.name}}</td>
+        <td>{{item.price}}</td>
+        <td><input type="number" min="1" max="50" ng-model="item.num"></td>
+        <td> <span class="btn btn-danger btn-sm" ng-click="$ctrl.deleteItem(item._id)">X</span></td>
+      </tr>
+
+    </table>
+    </div>
+    <div class="col-md-offset-1 col-md-3 cart-total">
+      <div class="total"><b> Total price : {{$ctrl.totalPrice}}</b></div>
+      <a  class="btn" href="/catalog">back to shop</a>
+      <button class="btn btn-primary"  ng-click="$ctrl.toCheckout()" ng-disabled="$ctrl.disabled">checkout</button>
+    </div>
+
+  </div>
+</div>
+
+

@@ -1,0 +1,14 @@
+<div >
+  <div class="row">
+    <div class="main-photo col-md-12" >
+      <img ng-src="http://localhost:4001/api/v1/{{$ctrl.mainImage}}" alt="">
+    </div>
+
+    <div class="smaller-photos col-md-2"  ng-repeat = "photo in $ctrl.componentImages" >
+      <img  ng-src="http://localhost:4001/api/v1/{{photo}}" class="img-responsive"  alt=""
+            ng-click = "$ctrl.change(photo)">
+    </div>
+
+
+  </div>
+</div>

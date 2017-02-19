@@ -1,0 +1,58 @@
+@import"../../variables.styl";
+
+.p0
+  padding 0
+
+.top-nav-header
+  height 75.5px
+  @media screen and (max-width: 1020px)
+    height auto
+  ul>li
+    display inline-block
+    text-transform uppercase
+    padding 15px
+    a
+      color whitesmoke
+      height 100%
+      &:hover, &:focus
+        background-color rgba(255, 129, 0, 0.81)
+
+
+
+.header
+  background-color black
+  color: whitesmoke
+  height 100%
+
+
+.main-logo
+  margin-left 25px
+
+.cart-box
+  background-color rgba(255, 129, 0, 0.81)
+  color white
+  height 35px
+  text-align center
+  line-height 35px
+  font-size: 17px
+  transition display 2s ease
+  border-radius 3px
+
+
+.cart-popup
+  position absolute
+  padding 0 0 10px 7px
+  top 132px
+  right 4px
+  background-color #fff
+  box-shadow 0 0 10px rgba(0,0,0,0.5)
+  z-index 999
+  border-radius 3px
+  @media screen and (max-width: 990px)
+    position relative
+    top 0
+    right 0
+
+
+.pointer
+  cursor pointer

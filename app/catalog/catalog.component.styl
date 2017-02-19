@@ -1,0 +1,53 @@
+//.catalog
+//	width 100%
+//	max-width 960px
+//	margin 0 auto
+//	display flex
+//	flex-wrap wrap
+//	&__element
+//		width 33.333%
+//		box-sizing border-box
+//		padding 1rem
+//		@media screen and (max-width: 760px)
+//			width 100%;
+
+.flex
+  display flex
+  flex-wrap wrap
+  align-items flex-end
+
+.catalog-item__name
+  overflow hidden
+  word-break break-all
+  text-overflow ellipsis
+  max-height 2em
+  text-align: center
+  font-size 1.8rem
+
+.catalog-item__description-text
+  overflow hidden
+  word-break break-all
+  text-overflow ellipsis
+  max-height 5em
+
+
+.catalog-item__small-description
+  padding 10px
+
+
+.catalog-item__price
+  text-align center
+  color #020031
+  font-size 1.65srem
+  padding-top 11px
+  font-weight bolder
+
+.sort-by-price
+  text-align center
+  margin-top 75px
+  font-size 17px
+  span
+    &:hover
+      color rgba(71, 229, 191, 0.76)
+    &:active
+      color rgba(71, 229, 191, 0.76)

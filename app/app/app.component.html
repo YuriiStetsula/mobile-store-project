@@ -1,0 +1,13 @@
+<app-navbar total-price="$ctrl.totalPrice"
+            items-in-cart="$ctrl.itemsInCart"
+            remove-from-cart="$ctrl.removeItemsFromCart(idItem)"
+            main-logo="$ctrl.mainLogo"
+            show-cart="$ctrl.isCartEnable"
+        >
+
+      </app-navbar>
+
+              <ui-view></ui-view>
+              <footer-component
+                main-logo="$ctrl.mainLogo"
+              ></footer-component>
